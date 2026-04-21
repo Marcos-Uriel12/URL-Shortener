@@ -106,3 +106,5 @@ pytest tests/
 # Con output detallado
 pytest tests/ -v
 ```
+## Roadmap.sh
+Url: https://roadmap.sh/projects/url-shortening-service
