@@ -76,3 +76,33 @@ Crear un archivo `.env` en la raíz del proyecto:
   "limit": 10
 }
 ```
+
+## Correr con Docker
+
+**Requisitos:** Docker y Docker Compose instalados.
+
+```bash
+docker compose up --build
+docker compose exec api alembic upgrade head
+```
+
+Levanta la API en `http://localhost:8001` y una base de datos MySQL en el puerto `3308`.  
+Las variables de entorno ya están configuradas en el `docker-compose.yml`.
+
+> Para detener: `docker compose down`  
+> Para eliminar también los datos: `docker compose down -v`
+
+## Correr tests
+
+Los tests usan SQLite en memoria, no requieren MySQL.
+
+```bash
+# Instalar dependencias de desarrollo (si no están instaladas)
+pip install pytest httpx
+
+# Correr todos los tests
+pytest tests/
+
+# Con output detallado
+pytest tests/ -v
+```

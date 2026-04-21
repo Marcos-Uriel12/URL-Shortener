@@ -9,3 +9,6 @@ pydantic-settings
 passlib[bcrypt]
 python-jose[cryptography]
 bcrypt==4.0.1
+pytest
+pytest-asyncio
+httpx
